@@ -1,3 +1,10 @@
+arr = [3, 7, 1, 5, 9, 2]
+print("Original array:")
+print(arr)
+
+
+# Insertion sort
+
 def insertion_sort(arr):
     for i in range(1, len(arr)):
         num = arr[i]
@@ -8,7 +15,36 @@ def insertion_sort(arr):
     return arr
 
 
-arr = [3, 5, 1, 7, 9, 5, 3, 8]
+result_insertion = insertion_sort(arr)
+print("Insertion sort :")
+print(result_insertion)
 
-result = insertion_sort(arr)
-print(result)
+
+# selection sort
+
+def selection_sort(arr):
+    for i in range(len(arr)):
+        min_idx = i
+        for j in range(i + 1, len(arr)):
+            if arr[min_idx] > arr[j]:
+                min_idx = j
+        arr[min_idx], arr[i] = arr[i], arr[min_idx]
+    return arr
+
+
+print("Selection Sort :")
+print(selection_sort(arr))
+
+
+# bubble sort
+
+def bubble_sort(arr):
+    for i in range(len(arr)):
+        for j in range(len(arr) - (i + 1)):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+    return arr
+
+
+print("Bubble sort :")
+print(bubble_sort(arr))
